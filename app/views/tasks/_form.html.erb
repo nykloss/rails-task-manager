@@ -5,8 +5,10 @@
   <%= f.label :details %>
   <%= f.text_field :details %>
 
-  <%= f.label :completed %>
-  <%= f.text_field :completed %>
+  <% unless @task.new_record? %>
+    <%= f.label :completed %>
+    <%= f.text_field :completed %>
+  <% end %>
 
   <%= f.submit %>
 <% end %>
